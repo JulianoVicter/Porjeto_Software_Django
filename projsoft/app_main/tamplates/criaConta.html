@@ -1,0 +1,54 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Criar Conta — Ciranda</title>
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <img src="{% static 'imagens/Logo.png' %}" alt="Logo Ciranda" class="logo-img">
+        <div class="logo-text">
+          <h1>Ciranda</h1>
+          <p class="tag">Todos de mãos dadas</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="signup-section">
+    <div class="container form-container">
+      <h2>Criar sua conta</h2>
+      <p>Preencha os campos abaixo para começar a fazer parte da Ciranda.</p>
+
+      <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">Criar conta</button>
+          <a href="{% url 'index' %}" class="btn-outline">Voltar</a>
+        </div>
+      </form>
+      
+      {% if messages %}
+        <ul>
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+      
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© {{ now|date:"Y" }} Ciranda — Todos de mãos dadas.</p>
+    </div>
+  </footer>
+</body>
+</html>
