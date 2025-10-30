@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
+
 from .forms import UsuarioForm, ContatoForm
+
 
 def index(request):
     if request.method == 'POST':
@@ -29,4 +31,7 @@ def cria_conta(request):
     else:
         form = UsuarioForm()
 
+    return render(request, 'app_main/criaConta.html')
+
+def criar_conta(request):
     return render(request, 'app_main/criaConta.html')
