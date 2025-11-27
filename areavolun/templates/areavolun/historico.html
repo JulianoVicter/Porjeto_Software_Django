@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Histórico - Ciranda</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+
+<header>
+  <div class="logo-area">
+    <img src="{% static 'imagens/logo.png' %}" class="logo-icon">
+    <strong>Ciranda</strong>
+  </div>
+  <nav>
+    <a href="/inicio/">Início</a>
+    <a href="/sobre/">Sobre</a>
+    <a href="/oportunidades/">Oportunidades</a>
+    <a href="{% url 'login' %}" class="btn-outline">Sair</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h1>Histórico de Aplicações</h1>
+  <p>Acompanhe o status das suas inscrições.</p>
+
+  <table class="tabela-historico">
+    <thead>
+      <tr>
+        <th>Projeto</th>
+        <th>Data</th>
+        <th>Status</th>
+        <th>Detalhes</th>
+      </tr>
+    </thead>
+
+    <tbody>
+  <tr>
+    <td>Brincar & Cuidar</td>
+    <td>12/11/2025</td>
+    <td class="status aceito">Aceito</td>
+    <td><a href="{% url 'aceito' %}" class="btn-ver">Ver</a></td>
+  </tr>
+
+  <tr>
+    <td>Reforço Escolar</td>
+    <td>20/11/2025</td>
+    <td class="status analise">Em Análise</td>
+    <td><a href="{% url 'analise' %}" class="btn-ver">Ver</a></td>
+  </tr>
+
+  <tr>
+    <td>Mentoria Jovem</td>
+    <td>01/12/2025</td>
+    <td class="status rejeitado">Rejeitado</td>
+    <td><a href="{% url 'rejeitado' %}" class="btn-ver">Ver</a></td>
+  </tr>
+</tbody>
+
+  </table>
+
+</div>
+
+</body>
+</html>

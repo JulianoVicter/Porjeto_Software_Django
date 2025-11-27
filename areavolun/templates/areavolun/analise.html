@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <title>Status da Candidatura - Em Análise</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+
+<header>
+  <div class="logo-area">
+    <img src="{% static 'imagens/logo.png' %}" class="logo-icon">
+    <strong>Ciranda</strong>
+  </div>
+
+  <nav>
+    <a href="{% url 'inicio' %}">Início</a>
+    <a href="{% url 'sobre' %}">Sobre</a>
+    <a href="{% url 'lista_projetos' %}">Oportunidades</a>
+    <a href="{% url 'login' %}">Sair</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <div class="card" style="text-align:center; padding:30px;">
+    <div style="font-size:60px;">⏳</div>
+
+    <h1>Sua candidatura está em análise</h1>
+
+    <p>A organização está revisando seu perfil com atenção.</p>
+    <p>Esse processo pode levar algum tempo dependendo da quantidade de candidatos.</p>
+    <p>Assim que houver uma decisão, você receberá uma atualização na sua Área do Voluntário.</p>
+
+    <br>
+
+    <a href="{% url 'lista_projetos' %}">
+      <button class="btn-primary">Ver outras oportunidades</button>
+    </a>
+  </div>
+
+</div>
+
+</body>
+</html>

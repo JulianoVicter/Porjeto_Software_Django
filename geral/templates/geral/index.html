@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ciranda — Conectar para Ajudar</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+
+<header>
+  <div class="logo-area">
+      <img src="{% static 'imagens/logo.png' %}" class="logo-icon">
+      <strong>Ciranda</strong>
+  </div>
+
+  <nav>
+    <a href="/inicio/">Início</a>
+    <a href="/sobre/">Sobre</a>
+    <a href="{% url 'lista_projetos' %}">Oportunidades</a>
+    <a href="{% url 'escolha_perfil' %}" class="btn-outline">Entrar / Cadastrar</a>
+  </nav>
+</header>
+
+<main class="pagina-principal">
+
+  <!-- HERO -->
+  <section class="hero">
+      <div class="hero-texto">
+          <h1>Encontre oportunidades de voluntariado perto de você</h1>
+          <p>Conectamos pessoas dispostas a ajudar com ONGs e projetos sociais — simples, confiável e colaborativo.</p>
+
+          <div class="hero-botoes">
+              <a href="{% url 'login' %}" class="btn-principal-vol">Quero ser voluntário</a>
+              <a href="{% url 'login_ong' %}" class="btn-principal-org">Sou uma organização</a>
+          </div>
+      </div>
+
+      <div class="hero-card">
+            <img src="{% static 'imagens/logo2.png' %}" class="logo-icon">
+
+      </div>
+  </section>
+
+  <!-- PARA VOLUNTÁRIOS -->
+  <section class="sessao-voluntarios">
+      <h2>Para voluntários</h2>
+      <p class="sub">Cadastre-se, escolha a causa que combina com você e participe de ações locais com segurança e acompanhamento.</p>
+
+      <div class="cards-info">
+
+          <div class="card-info">
+              <h3>Filtrar por distância</h3>
+              <p>Encontre oportunidades próximas usando filtros simples.</p>
+          </div>
+
+          <div class="card-info">
+              <h3>Eventos e vagas</h3>
+              <p>Vagas com descrição clara, requisitos e horários.</p>
+          </div>
+
+          <div class="card-info">
+              <h3>Comunidade</h3>
+              <p>Avaliações e recomendações de outros voluntários.</p>
+          </div>
+
+      </div>
+  </section>
+
+</main>
+
+</body>
+</html>

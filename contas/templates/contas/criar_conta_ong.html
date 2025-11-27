@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Criar Conta – ONG</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+
+<header>
+  <div class="logo-area">
+    <img src="{% static 'imagens/logo.png' %}" class="logo-icon">
+    <strong>Ciranda</strong>
+  </div>
+  <nav>
+    <a href="{% url 'inicio' %}">Início</a>
+    <a href="{% url 'sobre' %}">Sobre</a>
+    <a href="{% url 'lista_projetos' %}">Oportunidades</a>
+    <a href="{% url 'escolha_perfil' %}" class="btn-outline">Entrar / Cadastrar</a>
+  </nav>
+</header>
+
+<main class="form-wrapper">
+
+    <h1 class="titulo-pagina">Criar Conta — ONG</h1>
+
+    <div class="form-card">
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <input type="text" name="nome" placeholder="Nome da ONG" required>
+            <input type="text" name="cnpj" placeholder="CNPJ" required>
+            <input type="text" name="tema" placeholder="Tema principal (ex: Infância, saúde…)" required>
+
+            <input type="number" name="pessoas" placeholder="Pessoas atendidas" min="0">
+
+            <input type="text" name="localizacao" placeholder="Localização" required>
+
+            <textarea name="objetivo" placeholder="Objetivo da ONG" required></textarea>
+
+            <button type="submit" class="btn-primary btn-full">Criar conta</button>
+        </form>
+
+        <p class="redirect-text">
+            Já tem conta?
+            <a href="{% url 'login_ong' %}" class="btn-link">Entrar</a>
+        </p>
+
+    </div>
+
+</main>
+
+</body>
+</html>
