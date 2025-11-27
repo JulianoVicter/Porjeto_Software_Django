@@ -1,0 +1,82 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ciranda — Conectar para Ajudar</title>
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <img src="{% static 'imagens/Logo.png' %}" alt="Logo Ciranda" class="logo-img">
+        <div class="logo-text">
+          <h1>Ciranda</h1>
+          <p class="tag">Todos de mãos dadas</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#voluntario">Voluntário</a>
+        <a href="#organizacao">Organização</a>
+        <a href="{% url 'cria_conta' %}" class="btn-outline">Entrar / Cadastrar</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <h2>Encontre oportunidades de voluntariado perto de você</h2>
+        <p>Conectamos pessoas dispostas a ajudar com ONGs e projetos sociais — simples, confiável e colaborativo.</p>
+        <div class="hero-cta">
+          <a href="#voluntario" class="btn-primary">Quero ser voluntário</a>
+          <a href="#organizacao" class="btn-secondary">Sou uma organização</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="voluntario" class="section container">
+    <h3>Para voluntários</h3>
+    <p>Cadastre-se, escolha a causa que combina com você e participe de ações locais com segurança e acompanhamento.</p>
+  </section>
+
+  <section id="organizacao" class="section container">
+    <h3>Para organizações</h3>
+    <p>Divulgue suas vagas, monitore inscrições e conecte-se com voluntários engajados.</p>
+  </section>
+
+  <!-- Formulário de contato -->
+  <section id="contato" class="section container contact">
+    <h3>Contato</h3>
+    <p>Quer participar ou ter sua organização listada? Envie uma mensagem.</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="form-actions">
+          <button class="btn-primary" type="submit">Enviar</button>
+          <button class="btn-outline" type="reset">Limpar</button>
+        </div>
+      </form>
+      
+      {% if messages %}
+        <ul>
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+      
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© {{ now|date:"Y" }} Ciranda — Todos de mãos dadas.</p>
+    </div>
+  </footer>
+</body>
+</html>
