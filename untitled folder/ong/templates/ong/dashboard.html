@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard da ONG – Ciranda</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="logo-area">
+    <img src="{% static 'imagens/logo.png' %}" class="logo-icon">
+    <strong>Ciranda</strong>
+  </div>
+
+  <nav>
+    <a href="{% url 'inicio' %}">Início</a>
+    <a href="{% url 'sobre' %}">Sobre</a>
+    <a href="{% url 'lista_projetos' %}">Oportunidades</a>
+    <a href="{% url 'login' %}">Sair</a>
+  </nav>
+</header>
+
+<main class="container">
+
+  <h1>Dashboard</h1>
+  <p class="subtitulo">Visão geral da sua ONG na Ciranda.</p>
+
+  <div class="card-projeto">
+    <h2>Resumo</h2>
+    <p><b>Total de voluntários:</b> 184</p>
+    <p><b>Novos nos últimos 30 dias:</b> 23</p>
+    <p><b>Arrecadação total:</b> R$ 48.300,00</p>
+    <p><b>Arrecadação nos últimos 30 dias:</b> R$ 6.250,00</p>
+  </div>
+
+  <div class="card-projeto">
+    <h2>Voluntários — últimos 6 meses</h2>
+    <p>Mai: 22</p>
+    <div class="progress-bar"><div style="width:22%;"></div></div>
+
+    <p>Jun: 28</p>
+    <div class="progress-bar"><div style="width:28%;"></div></div>
+
+    <p>Jul: 31</p>
+    <div class="progress-bar"><div style="width:31%;"></div></div>
+
+    <p>Ago: 25</p>
+    <div class="progress-bar"><div style="width:25%;"></div></div>
+
+    <p>Set: 35</p>
+    <div class="progress-bar"><div style="width:35%;"></div></div>
+
+    <p>Out: 43</p>
+    <div class="progress-bar"><div style="width:43%;"></div></div>
+  </div>
+
+  <div class="card-projeto">
+    <h2>Arrecadação — últimos 6 meses</h2>
+    <p>Mai: 6.800</p>
+    <div class="progress-bar blue"><div style="width:68%;"></div></div>
+
+    <p>Jun: 7.200</p>
+    <div class="progress-bar blue"><div style="width:72%;"></div></div>
+
+    <p>Jul: 8.100</p>
+    <div class="progress-bar blue"><div style="width:81%;"></div></div>
+
+    <p>Ago: 6.000</p>
+    <div class="progress-bar blue"><div style="width:60%;"></div></div>
+
+    <p>Set: 7.950</p>
+    <div class="progress-bar blue"><div style="width:79%;"></div></div>
+
+    <p>Out: 9.250</p>
+    <div class="progress-bar blue"><div style="width:92%;"></div></div>
+  </div>
+
+  <div class="card-projeto">
+    <h2>Outras observações</h2>
+    <p>— Causas mais procuradas: educação e infância.</p>
+    <p>— Disponibilidades comuns: sábados e noites em dias úteis.</p>
+
+    <a href="{% url 'inscritos' %}" class="btn-primary">Ver inscritos</a>
+  </div>
+
+</main>
+
+</body>
+</html>

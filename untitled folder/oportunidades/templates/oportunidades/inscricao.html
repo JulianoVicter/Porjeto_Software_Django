@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmação – Ciranda</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="logo-area">
+    <img src="{% static 'imagens/logo.png' %}" class="logo-icon">
+    <strong>Ciranda</strong>
+  </div>
+  <nav>
+    <a href="{% url 'inicio' %}">Início</a>
+    <a href="{% url 'sobre' %}">Sobre</a>
+    <a href="{% url 'lista_projetos' %}">Oportunidades</a>
+    <a href="{% url 'escolha_perfil' %}" class="btn-outline">Entrar / Cadastrar</a>
+  </nav>
+</header>
+
+<main class="container">
+
+  <h1>Confirmação de Inscrição</h1>
+
+  <div class="card-projeto">
+    <p><b>Projeto:</b> Brincar & Cuidar</p>
+    <p><b>Local:</b> Centro Comunitário Aurora (BH)</p>
+
+    <hr>
+
+    <p>Ao confirmar, você estará participando desta atividade no dia e horário estipulados.</p>
+
+    <button class="btn-primary" onclick="confirmarInscricao()">Confirmar inscrição</button>
+  </div>
+
+  <script>
+    function confirmarInscricao() {
+      if (confirm("Tem certeza que deseja confirmar sua inscrição?")) {
+        window.location.href = "{% url 'historico' %}";
+      }
+    }
+  </script>
+
+</main>
+
+</body>
+</html>

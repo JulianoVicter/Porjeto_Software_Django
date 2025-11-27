@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+{% load static %}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calendário - Ciranda</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+
+<header>
+  <div class="logo-area">
+    <img src="{% static 'imagens/logo.png' %}" class="logo-icon">
+    <strong>Ciranda</strong>
+  </div>
+  <nav>
+    <a href="/inicio/">Início</a>
+    <a href="/sobre/">Sobre</a>
+    <a href="/oportunidades/">Oportunidades</a>
+    <a href="{% url 'login' %}" class="btn-outline">Sair</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h1>Calendário</h1>
+  <p>Próximas atividades do projeto.</p>
+
+  <hr>
+
+  <h3>Novembro</h3>
+  <p><b>12/11 —</b> Reunião inicial (online) · 19h</p>
+  <p><b>20/11 —</b> Treinamento rápido (online) · 19h</p>
+  <p><b>23/11 —</b> Brincar & Cuidar (presencial) · 9h–12h</p>
+
+  <hr>
+
+  <h3>Dezembro</h3>
+  <p><b>07/12 —</b> Reforço escolar (online) · 20h</p>
+  <p><b>14/12 —</b> Brincar & Cuidar (presencial) · 9h–12h</p>
+
+</div>
+
+</body>
+</html>
