@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Login ONG - Ciranda</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+
+<header>
+  <div class="logo-area">
+    <img src="{% static 'imagens/logo.png' %}" class="logo-icon">
+    <strong>Ciranda</strong>
+  </div>
+  <nav>
+    <a href="{% url 'inicio' %}">Início</a>
+    <a href="{% url 'sobre' %}">Sobre</a>
+    <a href="{% url 'lista_projetos' %}">Oportunidades</a>
+    <a href="{% url 'escolha_perfil' %}" class="btn-outline">Entrar / Cadastrar</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <h1>Login ONG</h1>
+
+  <div class="card">
+    <form method="post">
+      <input type="email" placeholder="E-mail institucional">
+      <input type="password" placeholder="Senha">
+
+      <a href="{% url 'dashboard' %}" class="btn-primary">Entrar</a>
+
+
+    <p>Não tem conta?  
+      <a href="{% url 'criar_conta_ong' %}" class="btn-primary">Criar Conta</a>
+
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>

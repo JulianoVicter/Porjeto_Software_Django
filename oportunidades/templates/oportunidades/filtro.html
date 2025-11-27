@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buscar Oportunidades</title>
+
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="logo-area">
+    <img src="{% static 'imagens/logo.png' %}" class="logo-icon">
+    <strong>Ciranda</strong>
+  <nav>
+    <a href="{% url 'inicio' %}">Início</a>
+    <a href="{% url 'sobre' %}">Sobre</a>
+    <a href="{% url 'lista_projetos' %}">Oportunidades</a>
+    <a href="{% url 'escolha_perfil' %}" class="btn-outline">Entrar / Cadastrar</a>
+  </nav>
+</header>
+
+<main>
+
+<h1>Filtrar oportunidades</h1>
+
+<hr>
+
+<h3>Selecione uma causa:</h3>
+
+<p><label><input type="checkbox"> Infância</label></p>
+<p><label><input type="checkbox"> Educação</label></p>
+<p><label><input type="checkbox"> Saúde</label></p>
+
+<hr>
+
+<h3>Formato:</h3>
+<p><label><input type="checkbox"> Presencial</label></p>
+<p><label><input type="checkbox"> Remoto</label></p>
+
+<hr>
+
+<p><button>Aplicar filtro</button></p>
+
+</main>
+
+</body>
+</html>

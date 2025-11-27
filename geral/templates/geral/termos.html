@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <title>Termos de Uso - Ciranda</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+
+<header>
+  <div class="logo-area">
+    <img src="{% static 'imagens/logo.png' %}" class="logo-icon">
+    <strong>Ciranda</strong>
+  </div>
+  <nav>
+    <a href="/inicio/">Início</a>
+    <a href="/sobre/">Sobre</a>
+    <a href="{% url 'lista_projetos' %}">Oportunidades</a>
+    <a href="{% url 'escolha_perfil' %}" class="btn-outline">Entrar / Cadastrar</a>
+
+  </nav>
+</header>
+
+<div class="container">
+
+   <h2>Termos de Inscrição e Consentimento</h2>
+  <p>Ao se inscrever para um trabalho voluntário, você declara que leu e concorda com os pontos abaixo.</p>
+
+  <hr>
+
+  <p><b>1- Atividade voluntária (sem vínculo empregatício)</b></p>
+  <p>Eu entendo que a participação é voluntária, sem salário, sem vínculo CLT e sem obrigações trabalhistas.</p>
+
+  <p><b>2- Uso dos dados</b></p>
+  <p>Eu autorizo o uso dos meus dados de contato apenas para organização das atividades do projeto (convites, confirmação de datas e comunicação relacionada ao voluntariado).</p>
+
+  <p><b>3- Segurança e bem-estar</b></p>
+  <p>Eu concordo em seguir as orientações básicas de segurança, respeitar pessoas envolvidas e avisar a instituição caso eu não possa comparecer.</p>
+
+  <p><b>4- Imagem e registro</b></p>
+  <p>Eu autorizo, quando informado no projeto, registro simples de imagem (foto/vídeo) das ações, com fins de prestação de contas e divulgação do voluntariado.</p>
+
+  <p><b>5- Cancelamento</b></p>
+  <p>Eu posso solicitar a exclusão dos meus dados e a interrupção do contato a qualquer momento.</p>
+
+  <p><b>6- Conduta</b></p>
+  <p>Eu me comprometo a agir com respeito, cuidado e responsabilidade durante toda a atividade voluntária.</p>
+
+  <hr>
+
+  <p><label><input type="checkbox"> Li e concordo com os Termos de Inscrição e Consentimento.</label></p>
+
+  <a href="/contas/criar-conta/">
+    <a href="{% url 'area' %}" class="btn-outline"> Aceito os termos de uso</a>
+  </a>
+
+</div>
+
+</body>
+</html>
