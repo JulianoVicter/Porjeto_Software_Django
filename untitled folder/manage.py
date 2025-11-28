@@ -8,7 +8,8 @@ def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ciranda.settings')
     
-    # Alteração mínima para Pull Request
+# Alteração mínima para Pull Request
+
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
