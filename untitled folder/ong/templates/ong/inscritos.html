@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Análise dos Inscritos – Ciranda</title>
+
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="logo-area">
+    <img src="{% static 'imagens/logo.png' %}" class="logo-icon">
+    <strong>Ciranda</strong>
+  </div>
+  <nav>
+    <a href="{% url 'inicio' %}">Início</a>
+    <a href="{% url 'sobre' %}">Sobre</a>
+    <a href="{% url 'lista_projetos' %}">Oportunidades</a>
+    <a href="{% url 'login' %}" class="btn-outline">Sair</a>
+  </nav>
+</header>
+
+<main class="container">
+
+  <h1>Inscritos no Projeto</h1>
+
+  <div class="card-projeto">
+    <h2>Marina Alves</h2>
+    <p><b>Idade:</b> 29 anos</p>
+    <p><b>Cidade:</b> Belo Horizonte (MG)</p>
+    <p><b>E-mail:</b> marina.alves@gmail.com</p>
+    <p><b>Resumo:</b> Sou bastante motivada...</p>
+    <p><b>Disponibilidade:</b> sábados (presencial)</p>
+    <p><b>Observação:</b> perfil acolhedor e bem organizado.</p>
+
+    <a href="#" class="btn-primary">Entrar em contato</a>
+  </div>
+
+  <div class="card-projeto">
+    <h2>Carlos Menezes</h2>
+    <p><b>Idade:</b> 42 anos</p>
+    <p><b>Cidade:</b> Campinas (SP)</p>
+    <p><b>E-mail:</b> carlos.menezes@outlook.com</p>
+    <p><b>Resumo:</b> Tenho experiência com reforço escolar...</p>
+    <p><b>Disponibilidade:</b> noites (remoto)</p>
+    <p><b>Observação:</b> perfil didático e paciente.</p>
+
+    <a href="#" class="btn-primary">Entrar em contato</a>
+  </div>
+
+</main>
+
+</body>
+</html>

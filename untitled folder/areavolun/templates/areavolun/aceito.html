@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <title>Status da Candidatura - Aprovada</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+
+<header>
+  <div class="logo-area">
+    <img src="{% static 'imagens/logo.png' %}" class="logo-icon">
+    <strong>Ciranda</strong>
+  </div>
+  <nav>
+    <a href="{% url 'inicio' %}">Início</a>
+    <a href="{% url 'sobre' %}">Sobre</a>
+    <a href="{% url 'lista_projetos' %}">Oportunidades</a>
+    <a href="{% url 'login' %}">Sair</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <div class="card" style="text-align:center; padding:30px;">
+    <div style="font-size:60px;">🎉</div>
+    <h1>Sua candidatura foi aprovada!</h1>
+
+    <p>Parabéns! Seu perfil foi selecionado como compatível com a vaga escolhida.</p>
+    <p>A organização entrará em contato em breve para os próximos passos.</p>
+
+    <br>
+
+    <a href="{% url 'area' %}">
+      <button class="btn-primary">Ir para minha área</button>
+    </a>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+{% load static %}
+<head>
+    <meta charset="UTF-8" />
+    <title>Área do Voluntário – Ciranda</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+<header>
+  <div class="logo-area">
+    <img src="{% static 'imagens/logo.png' %}" class="logo-icon">
+    <strong>Ciranda</strong>
+  </div>
+  <nav>
+    <a href="/inicio/">Início</a>
+    <a href="/sobre/">Sobre</a>
+    <a href="/oportunidades/">Oportunidades</a>
+    <a href="{% url 'login' %}" class="btn-outline">Sair</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <h1>Área do Voluntário</h1>
+  <p>Bem-vindo(a)! Acompanhe suas atividades e status.</p>
+
+  <div class="card">
+    <h2>Status da sua inscrição</h2>
+
+    <!-- POR ENQUANTO ESTÁTICO: depois conectamos com o backend -->
+    <p><b>Projeto atual:</b> Brincar & Cuidar</p>
+ 
+
+    <a href="{% url 'calendario' %}">
+      <button class="btn-primary">Ver Calendário</button>
+    </a>
+
+    <a href="{% url 'historico' %}">
+      <button class="btn-secondary">Histórico</button>
+    </a>
+  </div>
+
+</div>
+
+</body>
+</html>

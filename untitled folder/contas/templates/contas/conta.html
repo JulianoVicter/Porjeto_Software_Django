@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <title>Criar Conta - Ciranda</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+
+<header>
+  <div class="logo-area">
+    <img src="{% static 'imagens/logo.png' %}" class="logo-icon">
+    <strong>Ciranda</strong>
+  </div>
+  <nav>
+    <a href="/inicio/">Início</a>
+    <a href="/sobre/">Sobre</a>
+    <a href="/oportunidades/">Oportunidades</a>
+    <a href="{% url 'escolha_perfil' %}" class="btn-outline">Entrar / Cadastrar</a>
+
+  </nav>
+</header>
+
+<div class="container">
+
+  <h1>Criar Conta</h1>
+
+  <div class="card">
+    <form method="post">
+
+      <input type="text" placeholder="Nome">
+      <input type="email" placeholder="E-mail">
+      <input type="password" placeholder="Senha">
+      <input type="password" placeholder="Confirmar Senha">
+
+      <a href="{% url 'termos' %}">
+        <button type="button" class="btn-primary">Continuar</button>
+      </a>
+
+
+    </form>
+    <p>Já tem conta?  
+    <a href="{% url 'login' %}">
+        <button type="button" class="btn-primary">Entrar</button>
+      </a>
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>

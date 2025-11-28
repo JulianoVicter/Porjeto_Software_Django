@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oportunidades – Ciranda</title>
+
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="logo-area">
+    <img src="{% static 'imagens/logo.png' %}" class="logo-icon">
+    <strong>Ciranda</strong>
+  </div>
+
+  <nav>
+    <a href="{% url 'inicio' %}">Início</a>
+    <a href="{% url 'sobre' %}">Sobre</a>
+    <a href="{% url 'lista_projetos' %}">Oportunidades</a>
+    <a href="{% url 'escolha_perfil' %}" class="btn-outline">Entrar / Cadastrar</a>
+  </nav>
+</header>
+
+
+<main class="pagina-oportunidades container">
+
+  <h1>Oportunidades Disponíveis</h1>
+  <p class="subtitulo">Encontre projetos perto de você ou de acordo com suas causas favoritas.</p>
+  <hr>
+
+  <!-- CARD 1 -->
+  <div class="card-projeto">
+    <h3>Brincar & Cuidar</h3>
+    <p><b>Causa:</b> Infância</p>
+    <p><b>Local:</b> Centro Comunitário Aurora (BH)</p>
+    <p><b>Data:</b> 23/11 — 9h às 12h</p>
+
+    <div class="acoes-card">
+      <a href="{% url 'projeto' %}" class="btn-primary">Ver detalhes</a>
+      <a href="{% url 'inscricao' %}" class="btn-secondary">Inscrever-se</a>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- CARD 2 -->
+  <div class="card-projeto">
+    <h3>Aulas de Reforço</h3>
+    <p><b>Causa:</b> Educação</p>
+    <p><b>Local:</b> ONG Sementes do Amanhã (SP)</p>
+    <p><b>Data:</b> Toda quarta — 18h às 20h</p>
+
+    <div class="acoes-card">
+      <a href="{% url 'projeto' %}" class="btn-primary">Ver detalhes</a>
+      <a href="{% url 'inscricao' %}" class="btn-secondary">Inscrever-se</a>
+    </div>
+  </div>
+
+  <hr>
+
+</main>
+
+</body>
+</html>
