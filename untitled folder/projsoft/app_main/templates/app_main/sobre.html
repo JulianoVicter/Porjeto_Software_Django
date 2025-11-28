@@ -1,0 +1,61 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sobre — Ciranda</title>
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <img src="{% static 'imagens/Logo.png' %}" alt="Logo Ciranda" class="logo-img">
+        <div class="logo-text">
+          <h1>Ciranda</h1>
+          <p class="tag">Todos de mãos dadas</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="{% url 'index' %}">Início</a>
+        <a href="{% url 'sobre' %}" class="active">Sobre</a>
+        <a href="{% url 'cria_conta' %}" class="btn-outline">Entrar / Cadastrar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section container about-page">
+    <section class="about-hero">
+      <h2>O que é o <strong>Ciranda</strong>?</h2>
+      <p class="lead">Uma plataforma que conecta pessoas dispostas a ajudar com ONGs e projetos sociais — simples, confiável e colaborativo.</p>
+    </section>
+
+    <section class="about-content grid">
+      <article class="about-card">
+        <h3>Por que existimos</h3>
+        <p>O Ciranda existe para aproximar quem quer ajudar de quem precisa de apoio.</p>
+      </article>
+
+      <article class="about-card">
+        <h3>Nossa solução</h3>
+        <p>Conectamos voluntários e organizações de forma prática e segura.</p>
+      </article>
+
+      <article class="about-card about-cta">
+        <h3>Quer fazer parte?</h3>
+        <div class="hero-cta">
+          <a href="{% url 'cria_conta' %}" class="btn-primary">Criar conta</a>
+          <a href="{% url 'index' %}" class="btn-secondary">Ver oportunidades</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© {{ now|date:"Y" }} Ciranda — Todos de mãos dadas.</p>
+    </div>
+  </footer>
+</body>
+</html>
