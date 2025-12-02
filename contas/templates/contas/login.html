@@ -6,45 +6,43 @@
   <title>Login - Ciranda</title>
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
-
 <body>
-
 <header>
   <div class="logo-area">
-    <img src="{% static 'imagens/logo.png' %}" class="logo-icon">
+    <img src="{% static 'imagens/logo.png' %}" class="logo-icon" alt="Logo Ciranda">
     <strong>Ciranda</strong>
   </div>
   <nav>
-    <a href="/inicio/">Início</a>
-    <a href="/sobre/">Sobre</a>
-    <a href="/oportunidades/">Oportunidades</a>
+    <a href="{% url 'inicio' %}">Início</a>
+    <a href="{% url 'sobre' %}">Sobre</a>
+    <a href="{% url 'lista_projetos' %}">Oportunidades</a>
     <a href="{% url 'escolha_perfil' %}" class="btn-outline">Entrar / Cadastrar</a>
   </nav>
 </header>
 
 <div class="container">
-
   <h1>Entrar na Ciranda</h1>
+
+  {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+        <li class="{{ message.tags }}">{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
 
   <div class="card">
     <form method="post">
-      <!-- Django vai substituir depois -->
-      <input type="email" placeholder="E-mail">
-      <input type="password" placeholder="Senha">
-
-      <a href="{% url 'area' %}">
-        <button type="button" class="btn-primary">Entrar</button>
-      </a>
-
-
-    <p>Não tem conta?  
-      <a href="{% url 'conta' %}">
-        <button type="button" class="btn-primary">Criar Conta</button>
-      </a>
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+      <label>Usuário ou e-mail {{ form.username }}</label>
+      <label>Senha {{ form.password }}</label>
+      <button type="submit" class="btn-primary">Entrar</button>
+    </form>
+    <p>Não tem conta?
+      <a href="{% url 'escolha_perfil' %}">Criar conta</a>
     </p>
   </div>
-
 </div>
-
 </body>
 </html>
