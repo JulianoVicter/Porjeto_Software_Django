@@ -17,7 +17,7 @@ def criar_conta_voluntario(request):
         if form.is_valid():
             form.save()
             messages.success(request, "Conta de voluntário criada com sucesso! Faça login para continuar.")
-            return redirect("login")
+            return redirect("contas:login")
     else:
         form = VoluntarioSignupForm()
     return render(request, "contas/conta.html", {"form": form, "titulo": "Criar conta de voluntário"})
@@ -29,7 +29,7 @@ def criar_conta_ong(request):
         if form.is_valid():
             form.save()
             messages.success(request, "Conta de organização criada com sucesso! Faça login para continuar.")
-            return redirect("login")
+            return redirect("contas:login")
     else:
         form = OrganizacaoSignupForm()
     return render(request, "contas/criar_conta_ong.html", {"form": form, "titulo": "Criar conta de organização"})
@@ -47,7 +47,9 @@ def login(request):
             if user is not None:
                 auth_login(request, user)
                 messages.success(request, "Login realizado com sucesso!")
-                return redirect("area_voluntario" if hasattr(user, "perfil_voluntario") else "dashboard_ong")
+                return redirect(
+                    "contas:area_voluntario" if hasattr(user, "perfil_voluntario") else "contas:dashboard_ong"
+                )
             messages.error(request, "Usuário ou senha inválidos.")
     else:
         form = LoginForm(request)
