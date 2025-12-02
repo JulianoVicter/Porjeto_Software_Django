@@ -3,52 +3,50 @@
 {% load static %}
 <head>
   <meta charset="UTF-8">
-  <title>Criar Conta - Ciranda</title>
+  <title>{{ titulo|default:'Criar conta de voluntário' }} - Ciranda</title>
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
-
 <body>
-
 <header>
   <div class="logo-area">
-    <img src="{% static 'imagens/logo.png' %}" class="logo-icon">
+    <img src="{% static 'imagens/logo.png' %}" class="logo-icon" alt="Logo Ciranda">
     <strong>Ciranda</strong>
   </div>
   <nav>
-    <a href="/inicio/">Início</a>
-    <a href="/sobre/">Sobre</a>
-    <a href="/oportunidades/">Oportunidades</a>
+    <a href="{% url 'inicio' %}">Início</a>
+    <a href="{% url 'sobre' %}">Sobre</a>
+    <a href="{% url 'lista_projetos' %}">Oportunidades</a>
     <a href="{% url 'escolha_perfil' %}" class="btn-outline">Entrar / Cadastrar</a>
-
   </nav>
 </header>
 
 <div class="container">
+  <h1>{{ titulo|default:'Criar conta de voluntário' }}</h1>
 
-  <h1>Criar Conta</h1>
+  {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+        <li class="{{ message.tags }}">{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
 
   <div class="card">
     <form method="post">
-
-      <input type="text" placeholder="Nome">
-      <input type="email" placeholder="E-mail">
-      <input type="password" placeholder="Senha">
-      <input type="password" placeholder="Confirmar Senha">
-
-      <a href="{% url 'termos' %}">
-        <button type="button" class="btn-primary">Continuar</button>
-      </a>
-
-
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+      <label>Nome completo {{ form.nome_completo }}</label>
+      <label>E-mail {{ form.email }}</label>
+      <label>Telefone {{ form.telefone }}</label>
+      <label>Senha {{ form.password1 }}</label>
+      <label>Confirmar senha {{ form.password2 }}</label>
+      {% if form.interesses %}
+        <label>Áreas de interesse {{ form.interesses }}</label>
+      {% endif %}
+      <button type="submit" class="btn-primary">Criar conta</button>
     </form>
-    <p>Já tem conta?  
-    <a href="{% url 'login' %}">
-        <button type="button" class="btn-primary">Entrar</button>
-      </a>
-    </p>
+    <p>Já tem conta? <a href="{% url 'login' %}">Entrar</a></p>
   </div>
-
 </div>
-
 </body>
 </html>
