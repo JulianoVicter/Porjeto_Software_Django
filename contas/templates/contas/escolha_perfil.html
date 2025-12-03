@@ -6,35 +6,31 @@
     <title>Como deseja entrar? - Ciranda</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
-
 <body>
-
 <header>
   <div class="logo-area">
-    <img src="{% static 'imagens/logo.png' %}" class="logo-icon">
+    <img src="{% static 'imagens/logo.png' %}" class="logo-icon" alt="Logo Ciranda">
     <strong>Ciranda</strong>
   </div>
   <nav>
     <a href="{% url 'inicio' %}">Início</a>
     <a href="{% url 'sobre' %}">Sobre</a>
     <a href="{% url 'lista_projetos' %}">Oportunidades</a>
-    <a href="{% url 'escolha_perfil' %}" class="btn-outline">Entrar / Cadastrar</a>
+    <a href="{% url 'contas:escolha_perfil' %}" class="btn-outline">Entrar / Cadastrar</a>
   </nav>
 </header>
 
 <div class="centro-login">
-
   <div class="caixa-escolha">
       <h1>Como deseja acessar?</h1>
       <p>Escolha uma das opções abaixo:</p>
 
       <div class="botoes-escolha">
-        <a href="{% url 'login' %}" class="btn-escolha-vol">Sou Voluntário</a>
-        <a href="{% url 'login_ong' %}" class="btn-escolha-ong">Sou ONG</a>
+        <a href="{% url 'contas:login' %}" class="btn-escolha-vol">Já tenho conta</a>
+        <a href="{% url 'criar_conta_voluntario' %}" class="btn-escolha-vol">Cadastrar como voluntário</a>
+        <a href="{% url 'criar_conta_ong' %}" class="btn-escolha-ong">Cadastrar organização</a>
       </div>
   </div>
-
 </div>
-
 </body>
 </html>

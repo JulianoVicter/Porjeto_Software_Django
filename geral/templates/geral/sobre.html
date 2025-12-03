@@ -20,7 +20,7 @@
         <a href="{% url 'inicio' %}">Início</a>
         <a href="{% url 'sobre' %}" class="active">Sobre</a>
         <a href="{% url 'lista_projetos' %}">Oportunidades</a>
-        <a href="{% url 'escolha_perfil' %}" class="btn-outline">Entrar / Cadastrar</a>
+        <a href="{% url 'contas:escolha_perfil' %}" class="btn-outline">Entrar / Cadastrar</a>
     </nav>
 </header>
 
@@ -63,11 +63,11 @@
             <h3>Quer fazer parte?</h3>
             <p>Cadastre-se para receber oportunidades perto de você ou entre em contato para listar sua organização.</p>
 
-            <a href="{% url 'login' %}" class="btn-secondary" style="display:block; margin-bottom:12px; text-align:center;">
+            <a href="{% url 'contas:login' %}" class="btn-secondary" style="display:block; margin-bottom:12px; text-align:center;">
                 Quero ser voluntário
             </a>
 
-            <a href="{% url 'login_ong' %}" class="btn-principal-org" style="display:block; text-align:center;">
+            <a href="{% url 'contas:login_ong' %}" class="btn-principal-org" style="display:block; text-align:center;">
                 Sou uma organização
             </a>
         </div>

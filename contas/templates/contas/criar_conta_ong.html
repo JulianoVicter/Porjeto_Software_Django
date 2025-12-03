@@ -1,57 +1,52 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
+{% load static %}
 <head>
-    <meta charset="UTF-8">
-    <title>Criar Conta – ONG</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <meta charset="UTF-8">
+  <title>{{ titulo|default:'Criar conta de organização' }} - Ciranda</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
-
 <body>
-
 <header>
   <div class="logo-area">
-    <img src="{% static 'imagens/logo.png' %}" class="logo-icon">
+    <img src="{% static 'imagens/logo.png' %}" class="logo-icon" alt="Logo Ciranda">
     <strong>Ciranda</strong>
   </div>
   <nav>
     <a href="{% url 'inicio' %}">Início</a>
     <a href="{% url 'sobre' %}">Sobre</a>
     <a href="{% url 'lista_projetos' %}">Oportunidades</a>
-    <a href="{% url 'escolha_perfil' %}" class="btn-outline">Entrar / Cadastrar</a>
+    <a href="{% url 'contas:escolha_perfil' %}" class="btn-outline">Entrar / Cadastrar</a>
   </nav>
 </header>
 
-<main class="form-wrapper">
+<div class="container">
+  <h1>{{ titulo|default:'Criar conta de organização' }}</h1>
 
-    <h1 class="titulo-pagina">Criar Conta — ONG</h1>
+  {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+        <li class="{{ message.tags }}">{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
 
-    <div class="form-card">
-
-        <form method="POST">
-            {% csrf_token %}
-
-            <input type="text" name="nome" placeholder="Nome da ONG" required>
-            <input type="text" name="cnpj" placeholder="CNPJ" required>
-            <input type="text" name="tema" placeholder="Tema principal (ex: Infância, saúde…)" required>
-
-            <input type="number" name="pessoas" placeholder="Pessoas atendidas" min="0">
-
-            <input type="text" name="localizacao" placeholder="Localização" required>
-
-            <textarea name="objetivo" placeholder="Objetivo da ONG" required></textarea>
-
-            <button type="submit" class="btn-primary btn-full">Criar conta</button>
-        </form>
-
-        <p class="redirect-text">
-            Já tem conta?
-            <a href="{% url 'login_ong' %}" class="btn-link">Entrar</a>
-        </p>
-
-    </div>
-
-</main>
-
+  <div class="card">
+    <form method="post">
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+      <label>Nome completo {{ form.nome_completo }}</label>
+      <label>E-mail {{ form.email }}</label>
+      <label>Telefone {{ form.telefone }}</label>
+      <label>Senha {{ form.password1 }}</label>
+      <label>Confirmar senha {{ form.password2 }}</label>
+      <label>Nome da organização {{ form.nome_organizacao }}</label>
+      <label>Descrição {{ form.descricao }}</label>
+      <label>Site {{ form.site }}</label>
+      <button type="submit" class="btn-primary">Criar conta</button>
+    </form>
+      <p>Já tem conta? <a href="{% url 'contas:login' %}">Entrar</a></p>
+  </div>
+</div>
 </body>
 </html>
