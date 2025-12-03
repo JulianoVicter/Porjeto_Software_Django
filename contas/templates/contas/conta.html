@@ -16,7 +16,7 @@
     <a href="{% url 'inicio' %}">Início</a>
     <a href="{% url 'sobre' %}">Sobre</a>
     <a href="{% url 'lista_projetos' %}">Oportunidades</a>
-    <a href="{% url 'contas:escolha_perfil' %}" class="btn-outline">Entrar / Cadastrar</a>
+    <a href="{% url 'escolha_perfil' %}" class="btn-outline">Entrar / Cadastrar</a>
   </nav>
 </header>
 
@@ -46,6 +46,7 @@
       <button type="submit" class="btn-primary">Criar conta</button>
     </form>
     <p>Já tem conta? <a href="{% url 'contas:login' %}">Entrar</a></p>
+    <p>Já tem conta? <a href="{% url 'login' %}">Entrar</a></p>
   </div>
 </div>
 </body>
