@@ -1,3 +1,16 @@
-from django.test import TestCase
+from django.test import SimpleTestCase
+from django.urls import resolve, reverse
 
-# Create your tests here.
+from . import views
+
+
+class ContasURLTests(SimpleTestCase):
+    def test_login_url_points_to_shared_view(self):
+        url = reverse("contas:login")
+        self.assertEqual(url, "/contas/login/")
+        self.assertIs(resolve(url).func, views.login)
+
+    def test_login_ong_url_points_to_shared_view(self):
+        url = reverse("contas:login_ong")
+        self.assertEqual(url, "/contas/login/ong/")
+        self.assertIs(resolve(url).func, views.login)
